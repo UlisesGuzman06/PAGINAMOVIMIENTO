@@ -17,13 +17,13 @@ export default function OasisAñoPage({ params }: Props) {
         const response = await fetch(`${apiUrl}/oasis`);
         if (response.ok) {
           const data = await response.json();
-          // Filtrar por el año de la URL y ordenar por numero
+          // Filtrar por el año de la URL y ordenar por numero (mayor a menor para que 1 esté abajo)
           const filtered = data
             .filter((o: any) => o.año.toString() === año)
             .sort((a: any, b: any) => {
               const numA = parseInt(a.numero) || 0;
               const numB = parseInt(b.numero) || 0;
-              return numA - numB;
+              return numB - numA;
             });
           setEdiciones(filtered);
         }

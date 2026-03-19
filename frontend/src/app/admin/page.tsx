@@ -170,9 +170,9 @@ export default function AdminPage() {
     (o.nombre.toLowerCase().includes(searchTerm.toLowerCase()) || o.año.toString().includes(searchTerm)) &&
     (filterYear === "Todos" || o.año.toString() === filterYear)
   ).sort((a: any, b: any) => {
-    // Sort descending by year, then ascending by number
+    // Sort descending by year, then descending by number (1 at bottom)
     if (a.año !== b.año) return b.año - a.año;
-    return (parseInt(a.numero) || 0) - (parseInt(b.numero) || 0);
+    return (parseInt(b.numero) || 0) - (parseInt(a.numero) || 0);
   });
 
   return (

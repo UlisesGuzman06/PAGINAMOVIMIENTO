@@ -82,7 +82,7 @@ export default function Home() {
             <div style={{
               width: "100%",
               height: "100%",
-              backgroundImage: 'url("/FOTOS/cruz.jpg")',
+              backgroundImage: 'url("/FOTOS/CRUZ.jpg")',
               backgroundSize: "cover",
               backgroundPosition: "center",
               display: "flex",

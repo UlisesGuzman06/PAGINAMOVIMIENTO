@@ -1,6 +1,6 @@
-"use client";
 import { useState, useEffect, use } from "react";
 import Link from "next/link";
+import { getApiUrl } from "@/lib/apiConfig";
 import { notFound } from "next/navigation";
 
 type Props = { params: Promise<{ año: string; slug: string }> };
@@ -13,8 +13,7 @@ export default function DetalleRetiroPage({ params }: Props) {
   useEffect(() => {
     async function fetchOasisDetail() {
       try {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
-        const response = await fetch(`${apiUrl}/oasis/slug/${slug}`);
+        const response = await fetch(`${getApiUrl()}/oasis/slug/${slug}`);
         if (response.ok) {
           const data = await response.json();
           setOasis(data);

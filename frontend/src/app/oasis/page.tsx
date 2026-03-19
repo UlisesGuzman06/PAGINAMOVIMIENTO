@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { getApiUrl } from "@/lib/apiConfig";
 
 export default function OasisPage() {
   const [oasisList, setOasisList] = useState<any[]>([]);
@@ -9,8 +10,7 @@ export default function OasisPage() {
   useEffect(() => {
     async function fetchOasis() {
       try {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
-        const response = await fetch(`${apiUrl}/oasis`);
+        const response = await fetch(`${getApiUrl()}/oasis`);
         if (response.ok) {
           const data = await response.json();
           // Ordenar por año descendente

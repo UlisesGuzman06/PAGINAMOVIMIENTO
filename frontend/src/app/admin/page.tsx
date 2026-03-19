@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { getApiUrl } from "@/lib/apiConfig";
 
 const sidebarItems = [
   { icon: "eco", label: "Oasis", href: "/admin" },
@@ -37,8 +38,7 @@ export default function AdminPage() {
 
   async function fetchOasis() {
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
-      const response = await fetch(`${apiUrl}/oasis`);
+      const response = await fetch(`${getApiUrl()}/oasis`);
       if (response.ok) {
         const data = await response.json();
         setOasisList(data);
@@ -56,8 +56,7 @@ export default function AdminPage() {
     if (!confirm("¿Estás seguro de eliminar este Oasis?")) return;
     
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
-      const response = await fetch(`${apiUrl}/oasis/${id}`, {
+      const response = await fetch(`${getApiUrl()}/oasis/${id}`, {
         method: "DELETE",
       });
       if (response.ok) {
@@ -91,8 +90,7 @@ export default function AdminPage() {
     };
 
     const isUpdate = form.id;
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
-    const url = isUpdate ? `${apiUrl}/oasis/${form.id}` : `${apiUrl}/oasis`;
+    const url = isUpdate ? `${getApiUrl()}/oasis/${form.id}` : `${getApiUrl()}/oasis`;
     const method = isUpdate ? "PATCH" : "POST";
 
     try {
@@ -127,8 +125,7 @@ export default function AdminPage() {
 
     try {
       setLoading(true);
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
-      const res = await fetch(`${apiUrl}/oasis/upload`, {
+      const res = await fetch(`${getApiUrl()}/oasis/upload`, {
         method: 'POST',
         body: formData,
       });

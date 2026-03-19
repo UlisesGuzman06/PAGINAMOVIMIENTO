@@ -37,7 +37,8 @@ export default function AdminPage() {
 
   async function fetchOasis() {
     try {
-      const response = await fetch("http://localhost:3001/oasis");
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+      const response = await fetch(`${apiUrl}/oasis`);
       if (response.ok) {
         const data = await response.json();
         setOasisList(data);
@@ -55,7 +56,8 @@ export default function AdminPage() {
     if (!confirm("¿Estás seguro de eliminar este Oasis?")) return;
     
     try {
-      const response = await fetch(`http://localhost:3001/oasis/${id}`, {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+      const response = await fetch(`${apiUrl}/oasis/${id}`, {
         method: "DELETE",
       });
       if (response.ok) {
@@ -89,7 +91,8 @@ export default function AdminPage() {
     };
 
     const isUpdate = form.id;
-    const url = isUpdate ? `http://localhost:3001/oasis/${form.id}` : "http://localhost:3001/oasis";
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+    const url = isUpdate ? `${apiUrl}/oasis/${form.id}` : `${apiUrl}/oasis`;
     const method = isUpdate ? "PATCH" : "POST";
 
     try {
@@ -124,7 +127,8 @@ export default function AdminPage() {
 
     try {
       setLoading(true);
-      const res = await fetch('http://localhost:3001/oasis/upload', {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+      const res = await fetch(`${apiUrl}/oasis/upload`, {
         method: 'POST',
         body: formData,
       });

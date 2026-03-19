@@ -9,7 +9,8 @@ export default function OasisPage() {
   useEffect(() => {
     async function fetchOasis() {
       try {
-        const response = await fetch("http://localhost:3001/oasis");
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+        const response = await fetch(`${apiUrl}/oasis`);
         if (response.ok) {
           const data = await response.json();
           // Ordenar por año descendente

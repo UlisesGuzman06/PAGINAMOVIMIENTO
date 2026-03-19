@@ -13,7 +13,8 @@ export default function DetalleRetiroPage({ params }: Props) {
   useEffect(() => {
     async function fetchOasisDetail() {
       try {
-        const response = await fetch(`http://localhost:3001/oasis/slug/${slug}`);
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+        const response = await fetch(`${apiUrl}/oasis/slug/${slug}`);
         if (response.ok) {
           const data = await response.json();
           setOasis(data);

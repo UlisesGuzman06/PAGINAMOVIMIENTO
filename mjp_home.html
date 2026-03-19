@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MJP - Movimiento Juvenil Peregrino</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "secondary": "#22c55e",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-10 py-4 bg-white dark:bg-slate-900 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined text-3xl">hiking</span>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">MJP</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Inicio</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Nosotros</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Oasis</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Música</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Recursos</a>
+</nav>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-primary/90 text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors">
+<span class="truncate">Únete</span>
+</button>
+</div>
+</header>
+<main class="flex flex-1 flex-col w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<section class="@container mb-16">
+<div class="flex min-h-[500px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-8 text-center shadow-lg relative overflow-hidden" data-alt="Young people hiking together in mountains" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAil89bD3hQuK56e5n2t-qZjLyUhNxE1IPn4Erc1C9E-_7tb4g1WngpNIsbdh7NiYaDqN3dqCVL1lg_Tiwqqa41qmwdsONE_fbHJX-5jwJNYAvWlHBJEHOaliWHKS3SKrnNLh-dURPTyIx8tqmeSzFJnP2kq4ZIQBHLLAJpOdPdF4Xjn4QrWzB1k9GaNndXUaHxDqcbO9TzI5wqCiJpq6h0w67q58CXP7Vip8BYrcMIV2b4f9CsdPrr-zxxmrhEtHYLEsnWwHXi7H3F");'>
+<div class="absolute inset-0 bg-slate-900/60 mix-blend-multiply"></div>
+<div class="relative z-10 flex flex-col gap-4 max-w-3xl mx-auto items-center">
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/20 text-green-300 backdrop-blur-sm text-sm font-medium">
+<span class="material-symbols-outlined text-sm">church</span>
+                                Juventud Católica
+                            </span>
+<h1 class="text-white text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em]">
+                                Bienvenido a Movimiento Juvenil Peregrino
+                            </h1>
+<h2 class="text-slate-200 text-lg sm:text-xl font-normal leading-relaxed max-w-2xl mt-2">
+                                Unidos en la fe, caminamos juntos hacia Cristo. Únete a nuestra comunidad y fortalece tu espíritu.
+                            </h2>
+<button class="mt-6 flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary hover:bg-primary/90 text-white text-base font-bold leading-normal transition-colors shadow-lg">
+                                Conoce más
+                            </button>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-10 py-12 @container">
+<div class="flex flex-col gap-4 items-center text-center max-w-3xl mx-auto">
+<h2 class="text-slate-900 dark:text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight">
+                            Descubre nuestro movimiento
+                        </h2>
+<p class="text-slate-600 dark:text-slate-400 text-lg font-normal leading-relaxed">
+                            Explora todo lo que MJP tiene para ofrecerte en tu camino espiritual. Actividades diseñadas para jóvenes buscando un encuentro con Dios.
+                        </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mt-8">
+<div class="group flex flex-col gap-4 pb-4 cursor-pointer">
+<div class="w-full bg-center bg-no-repeat aspect-[4/3] bg-cover rounded-xl shadow-md overflow-hidden relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Group holding hands in prayer circle" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBWwi1U2_iMY589gAwipYsms2M7xkHf1z1-5gH8WgJ9NNFyIuj-SkkHY9Y2jT8Qxj9k_Uycs5YCn6lYh1lbfVjrIeM4qnzhZTUFn6wJY3yEXK6--fm0IW-qOsdvPTXmiKIYoPtQT3nwV795reEKv1r0cmbEsfJ2sbkFl_K72HViwTgJvjadcp-Kjk5LjfPKY6QQxNql2wFOgsIK5HuW-gL8wflsvXd6c9b1FEJJapLG68Wgvx08S7-MXuieZogmg2QYgYZVyOreCOTB");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+<span class="absolute bottom-4 left-4 material-symbols-outlined text-white text-3xl">nature_people</span>
+</div>
+<div>
+<h3 class="text-slate-900 dark:text-white text-xl font-bold leading-normal group-hover:text-primary transition-colors">Oasis</h3>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed mt-1">Retiros espirituales en la naturaleza para fortalecer tu fe y encontrar paz.</p>
+</div>
+</div>
+<div class="group flex flex-col gap-4 pb-4 cursor-pointer">
+<div class="w-full bg-center bg-no-repeat aspect-[4/3] bg-cover rounded-xl shadow-md overflow-hidden relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Acoustic guitar being played at gathering" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA-7IV9KarlHQIO-YIGelGJ94xJDJHTxqNW_eh02Z35tf5Nyr0Hll6SccQ6N35Lnq8IG1BAy_w5q-EjliuX8Apykej-Qtuv3LaTje5Kjz0wxeo8htAaYVbQJKFYHQHXXkSgaQopOGbdUywISFFS2iIzktISTtXgb4yd4YH12zGMwcE3iBcaEniE-geQS4M1059zJFo_Xk-mLvMKGX66N1kCrwHLaD26Ep5MrUEV_oF5wITtAwlY0ufAWB9_10FrXjvcIVyypnkUx9ZP");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+<span class="absolute bottom-4 left-4 material-symbols-outlined text-white text-3xl">music_note</span>
+</div>
+<div>
+<h3 class="text-slate-900 dark:text-white text-xl font-bold leading-normal group-hover:text-primary transition-colors">Música</h3>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed mt-1">Alabanzas y canciones para acompañar tu camino y expresar alegría.</p>
+</div>
+</div>
+<div class="group flex flex-col gap-4 pb-4 cursor-pointer">
+<div class="w-full bg-center bg-no-repeat aspect-[4/3] bg-cover rounded-xl shadow-md overflow-hidden relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Group of friends laughing together" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_NwfZ_eN_CoU0KJ9s4Y7yOA7C6A18_pXm9nbq7zlzoRB1vE6gtz3rqTpimzrTzdJwMHI0zh30xbRaxNDmRVdbgpq67MoRm9-4-3CbKl952cTP3JEQ8UD_AeFTWUSKWD2XFFnuhZzRg1A63reKbxkbU17yh_ZK2vEft2RL5XzcUwyO0TjqMt71GDLM52617OfSPtyjQF6B07zneSxETX8wiAzz71D5dWtkACmIBeKAC_Uk8hn1MNFzLEzGoJy3aMqIK2_9UmTY4Ynf");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+<span class="absolute bottom-4 left-4 material-symbols-outlined text-white text-3xl">photo_camera</span>
+</div>
+<div>
+<h3 class="text-slate-900 dark:text-white text-xl font-bold leading-normal group-hover:text-primary transition-colors">Fotos</h3>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed mt-1">Momentos inolvidables de nuestros encuentros, misiones y celebraciones.</p>
+</div>
+</div>
+<div class="group flex flex-col gap-4 pb-4 cursor-pointer">
+<div class="w-full bg-center bg-no-repeat aspect-[4/3] bg-cover rounded-xl shadow-md overflow-hidden relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Open bible with natural light" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkSgzC4kzi_QbGLiwVJdrYeHmUhRTp3C0WUH67ypPAeB7scMgytJVauqVwLa0GO1dZhcfsO3Ha9TW_jsa8Eq05I3ES7rhyYXLy2P5u9BHVRh4JpWac32RUm1vED6klvPIb5RREO7UggBecHvn5aMkmnRrat4YHfklA4XFigW_BbjTcxn2cUWQHWEsReaSe50KKfegjPoXWY90Qgef5cA8QlSVmlUJDefsI50dxsSx7EdsSJmRDPuEefDPYuKFCGEibdebTfPMoSLqa");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+<span class="absolute bottom-4 left-4 material-symbols-outlined text-white text-3xl">menu_book</span>
+</div>
+<div>
+<h3 class="text-slate-900 dark:text-white text-xl font-bold leading-normal group-hover:text-primary transition-colors">Recursos</h3>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed mt-1">Materiales de apoyo, lecturas y formación continua para jóvenes.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="@container my-12 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 p-8 sm:p-12 text-center">
+<div class="flex flex-col gap-4 max-w-2xl mx-auto">
+<span class="material-symbols-outlined text-5xl text-secondary mx-auto">volunteer_activism</span>
+<h2 class="text-slate-900 dark:text-white text-3xl sm:text-4xl font-black leading-tight">
+                            ¿Estás listo para dar el siguiente paso?
+                        </h2>
+<p class="text-slate-600 dark:text-slate-400 text-lg font-normal leading-relaxed mb-6">
+                            Únete a nosotros y vive la experiencia MJP. Conoce a otros jóvenes con tus mismos valores y crece en comunidad.
+                        </p>
+<button class="mx-auto flex w-full sm:w-auto min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-primary/90 text-white text-base font-bold transition-all shadow-md hover:shadow-lg">
+                            Regístrate ahora
+                        </button>
+</div>
+</section>
+</main>
+<footer class="mt-auto border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 py-12">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined">hiking</span>
+<span class="font-bold text-lg text-slate-900 dark:text-white">MJP</span>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Privacidad</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Términos</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Contacto</a>
+</div>
+<p class="text-slate-500 dark:text-slate-500 text-sm font-normal text-center md:text-right">
+                        © 2024 Movimiento Juvenil Peregrino.<br class="hidden sm:block md:hidden"/> Todos los derechos reservados.
+                    </p>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

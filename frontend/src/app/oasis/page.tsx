@@ -1,33 +1,19 @@
-"use client";
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { getApiUrl } from "@/lib/apiConfig";
 
-export default function OasisPage() {
-  const [oasisList, setOasisList] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+async function getOasis() {
+  const response = await fetch(`${getApiUrl()}/oasis`, {
+    next: { revalidate: 3600 } // Revalidar cada hora
+  });
+  if (!response.ok) return [];
+  const data = await response.json();
+  return data.sort((a: any, b: any) => b.año - a.año);
+}
 
-  useEffect(() => {
-    async function fetchOasis() {
-      try {
-        const response = await fetch(`${getApiUrl()}/oasis`);
-        if (response.ok) {
-          const data = await response.json();
-          // Ordenar por año descendente
-          const sorted = data.sort((a: any, b: any) => b.año - a.año);
-          setOasisList(sorted);
-        }
-      } catch (error) {
-        console.error("Error fetching oasis:", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchOasis();
-  }, []);
+export default async function OasisPage() {
+  const oasisList = await getOasis();
 
   const getYearInfo = (status: string) => {
-    // Por ahora usamos colores basados en si es reciente o no
     return { color: "var(--oasis-blue)", icon: "event", status: "VER OASIS" };
   };
 
@@ -44,18 +30,6 @@ export default function OasisPage() {
       count: groupedByYear[year].length,
       foto_principal: groupedByYear[year].find((o: any) => o.foto_principal)?.foto_principal || ""
     }));
-
-  const historicalYears = yearsArray.map(y => y.año);
-
-  if (loading) {
-    return (
-      <main className="container section">
-        <div style={{ textAlign: "center", padding: "100px 0" }}>
-          <span className="loader">⌛ Cargando Oasis...</span>
-        </div>
-      </main>
-    );
-  }
 
   return (
     <main className="container section">
@@ -101,7 +75,7 @@ export default function OasisPage() {
           
           <p style={{ marginBottom: "1.5rem" }}>
             Hasta que un día, un gran líder apareció y los entusiasmo, les dijo: “Yo voy con ustedes, yo voy a correr los mismos riesgos que ustedes y juntos vamos a llegar a la tierra de libertad”. 
-            Entonces, el pueblo se introdujo en el desierto y empezaron a andar. Fue un largo camino, en el que aparecieron cansancios y desesperanza.
+            Entonces, el pueblo se introdujo en el desierto and empezaron a andar. Fue un largo camino, en el que aparecieron cansancios y desesperanza.
           </p>
           
           <p>
@@ -130,9 +104,8 @@ export default function OasisPage() {
           );
         })}
       </div>
-
-
     </main>
   );
 }
+
 

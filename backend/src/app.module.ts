@@ -4,6 +4,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { SupabaseModule } from './supabase/supabase.module';
 import { OasisModule } from './oasis/oasis.module';
+import { MusicaModule } from './musica/musica.module';
+import { RecursosModule } from './recursos/recursos.module';
 
 @Module({
   controllers: [AppController],
@@ -12,6 +14,9 @@ import { OasisModule } from './oasis/oasis.module';
     ConfigModule.forRoot({ isGlobal: true }),
     SupabaseModule,
     OasisModule,
+    MusicaModule,
+    RecursosModule,
   ],
 })
 export class AppModule {}
+

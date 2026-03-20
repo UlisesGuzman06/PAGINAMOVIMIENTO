@@ -2,12 +2,17 @@ import Link from "next/link";
 import { getApiUrl } from "@/lib/apiConfig";
 
 async function getOasis() {
-  const response = await fetch(`${getApiUrl()}/oasis`, {
-    next: { revalidate: 3600 } // Revalidar cada hora
-  });
-  if (!response.ok) return [];
-  const data = await response.json();
-  return data.sort((a: any, b: any) => b.año - a.año);
+  try {
+    const response = await fetch(`${getApiUrl()}/oasis`, {
+      next: { revalidate: 3600 } // Revalidar cada hora
+    });
+    if (!response.ok) return [];
+    const data = await response.json();
+    return data.sort((a: any, b: any) => b.año - a.año);
+  } catch (error) {
+    console.error("Error fetching oasis:", error);
+    return [];
+  }
 }
 
 export default async function OasisPage() {

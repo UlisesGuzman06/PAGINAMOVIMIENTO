@@ -2,11 +2,16 @@ import { getApiUrl } from '@/lib/apiConfig';
 import RecursosClient from '@/components/RecursosClient';
 
 async function getRecursos() {
-  const res = await fetch(`${getApiUrl()}/recursos`, {
-    next: { revalidate: 3600 } // Caché de 1 hora
-  });
-  if (!res.ok) return [];
-  return res.json();
+  try {
+    const res = await fetch(`${getApiUrl()}/recursos`, {
+      next: { revalidate: 3600 } // Caché de 1 hora
+    });
+    if (!res.ok) return [];
+    return res.json();
+  } catch (error) {
+    console.error("Error fetching recursos:", error);
+    return [];
+  }
 }
 
 export default async function RecursosPage() {

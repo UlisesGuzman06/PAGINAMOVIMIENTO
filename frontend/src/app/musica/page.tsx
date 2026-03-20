@@ -2,11 +2,16 @@ import { getApiUrl } from '@/lib/apiConfig';
 import MusicaClient from '@/components/MusicaClient';
 
 async function getCanciones() {
-  const res = await fetch(`${getApiUrl()}/musica`, {
-    next: { revalidate: 3600 } // Caché de 1 hora
-  });
-  if (!res.ok) return [];
-  return res.json();
+  try {
+    const res = await fetch(`${getApiUrl()}/musica`, {
+      next: { revalidate: 3600 } // Caché de 1 hora
+    });
+    if (!res.ok) return [];
+    return res.json();
+  } catch (error) {
+    console.error("Error fetching canciones:", error);
+    return [];
+  }
 }
 
 export default async function MusicaPage() {
